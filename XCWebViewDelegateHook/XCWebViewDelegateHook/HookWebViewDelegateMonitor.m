@@ -17,7 +17,7 @@ static void hook_exchangeMethod(Class originalClass, SEL originalSel, Class repl
     Method replacedMethod = class_getInstanceMethod(replacedClass, replacedSel);
 //    assert(replacedMethod);
     IMP replacedMethodIMP = method_getImplementation(replacedMethod);
-    
+    // 将样替换的方法往代理类中添加, (一般都能添加成功, 因为代理类中不会有我们自定义的函数)
     BOOL didAddMethod =
     class_addMethod(originalClass,
                     replacedSel,
@@ -26,12 +26,14 @@ static void hook_exchangeMethod(Class originalClass, SEL originalSel, Class repl
     
     if (didAddMethod) {
         NSLog(@"class_addMethod succeed --> (%@)", NSStringFromSelector(replacedSel));
+        // 获取新方法在代理类中的地址
         Method newMethod = class_getInstanceMethod(originalClass, replacedSel);
+        // 交互原方法和自定义方法
         method_exchangeImplementations(originalMethod, newMethod);
+    } else {// 如果失败, 则证明自定义方法在代理方法中, 直接交互就可以
+        NSLog(@"class_addMethod fail --> (%@)", NSStringFromSelector(replacedSel));
+        method_exchangeImplementations(originalMethod, replacedMethod);
     }
-//    else {
-//        NSLog(@"class_addMethod fail --> (%@)", NSStringFromSelector(replacedSel));
-//    }
     
     
     
