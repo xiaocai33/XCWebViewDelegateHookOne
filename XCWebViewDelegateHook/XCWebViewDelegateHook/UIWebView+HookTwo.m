@@ -123,7 +123,7 @@ static NSMutableArray *arrayM;
 //}
 
 /**
- 注: 参考博客地址 https://blog.csdn.net/shjsir/article/details/52625415
+ 注: 参考博客地址 https://blog.csdn.net/Alpaca12/article/details/80707027
     class_addMethod 函数
      BOOL: 返回值，yes-------方法添加成功     no--------方法添加失败
      Class cls: 将要给添加方法的类，传的类型 ［类名  class］
@@ -136,3 +136,4 @@ static NSMutableArray *arrayM;
  */
 
 @end
+
