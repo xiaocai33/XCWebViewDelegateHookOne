@@ -44,21 +44,25 @@ void exchange_didFailLoadWithError(id self, SEL _cmd, UIWebView *webView, NSErro
     NSLog(@"--------exchange_didFailLoadWithError---------");
 }
 
+// 注: 这种方法 如果一个界面由两个webView则这种方法会有循环引用的问题, 或者第二个带有webView的界面第二次进入
 @implementation UIWebView (HookTwo)
 
-//+ (void)load{
-//    Method originalMethod = class_getInstanceMethod([UIWebView class], @selector(setDelegate:));
-//    Method swizzledMethod = class_getInstanceMethod([UIWebView class], @selector(hook_setDelegate:));
-//    method_exchangeImplementations(originalMethod, swizzledMethod);
-//}
-//
-//- (void)hook_setDelegate:(id<UIWebViewDelegate>)delegate{
-//    [self hook_setDelegate:delegate];
-//    // 获取delegate实际的类
-//    Class aClass = [delegate class];
-//    // 保留原方法 并将新方法的IMP指向原方法
-//    [self exchangeDelegateOfOriginClass:aClass];
-//}
++ (void)load{
+    Method originalMethod = class_getInstanceMethod([UIWebView class], @selector(setDelegate:));
+    Method swizzledMethod = class_getInstanceMethod([UIWebView class], @selector(hook_setDelegate:));
+    method_exchangeImplementations(originalMethod, swizzledMethod);
+}
+
+- (void)hook_setDelegate:(id<UIWebViewDelegate>)delegate{
+    [self hook_setDelegate:delegate];
+    // 获取delegate实际的类 (每个代理类只能调用一次 否则就会循环引用)
+    Class aClass = [delegate class];
+    
+    NSLog(@"delegateClass = %@", aClass);
+    
+    // 保留原方法 并将新方法的IMP指向原方法
+    [self exchangeDelegateOfOriginClass:aClass];
+}
 
 /**交互原类中相关的代理方法*/
 - (void)exchangeDelegateOfOriginClass:(Class)cls{
