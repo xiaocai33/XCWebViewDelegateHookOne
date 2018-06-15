@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		90A1568120D35965007134F5 /* UIWebView+HookTwo.m in Sources */ = {isa = PBXBuildFile; fileRef = 90A1568020D35965007134F5 /* UIWebView+HookTwo.m */; };
 		90D4742E20A1D14B0078752C /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D4742D20A1D14B0078752C /* AppDelegate.m */; };
 		90D4743120A1D14B0078752C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 90D4743020A1D14B0078752C /* ViewController.m */; };
 		90D4743420A1D14B0078752C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90D4743220A1D14B0078752C /* Main.storyboard */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		90A1567F20D35965007134F5 /* UIWebView+HookTwo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIWebView+HookTwo.h"; sourceTree = "<group>"; };
+		90A1568020D35965007134F5 /* UIWebView+HookTwo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+HookTwo.m"; sourceTree = "<group>"; };
 		90D4742920A1D14B0078752C /* XCWebViewDelegateHook.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = XCWebViewDelegateHook.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		90D4742C20A1D14B0078752C /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		90D4742D20A1D14B0078752C /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -115,6 +118,8 @@
 				90D4745F20A1D1790078752C /* UIWebView+Hook.m */,
 				90D4746120A1D2550078752C /* HookWebViewDelegateMonitor.h */,
 				90D4746220A1D2550078752C /* HookWebViewDelegateMonitor.m */,
+				90A1567F20D35965007134F5 /* UIWebView+HookTwo.h */,
+				90A1568020D35965007134F5 /* UIWebView+HookTwo.m */,
 				90D4743220A1D14B0078752C /* Main.storyboard */,
 				90D4743520A1D14E0078752C /* Assets.xcassets */,
 				90D4743720A1D14E0078752C /* LaunchScreen.storyboard */,
@@ -274,6 +279,7 @@
 			files = (
 				90D4743120A1D14B0078752C /* ViewController.m in Sources */,
 				90D4743C20A1D14E0078752C /* main.m in Sources */,
+				90A1568120D35965007134F5 /* UIWebView+HookTwo.m in Sources */,
 				90D4746020A1D1790078752C /* UIWebView+Hook.m in Sources */,
 				90D4742E20A1D14B0078752C /* AppDelegate.m in Sources */,
 				90D4746320A1D2560078752C /* HookWebViewDelegateMonitor.m in Sources */,

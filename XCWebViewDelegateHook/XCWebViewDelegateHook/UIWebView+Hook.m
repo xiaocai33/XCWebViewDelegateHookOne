@@ -20,7 +20,7 @@
     [HookWebViewDelegateMonitor exchangeUIWebViewDelegateMethod:aClass];
 }
 
-// 在 load 中 hook webView 的 setDelegate 方法
+ 在 load 中 hook webView 的 setDelegate 方法
 + (void)load{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{

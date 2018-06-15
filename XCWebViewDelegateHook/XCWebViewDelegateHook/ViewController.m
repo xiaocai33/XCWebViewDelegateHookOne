@@ -51,22 +51,22 @@
 }
 
 #pragma mark - webView delegate
-- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
-    NSLog(@"shouldStartLoadWithRequest");
-    return YES;
-}
+//- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+//    NSLog(@"shouldStartLoadWithRequest");
+//    return YES;
+//}
 
-- (void)webViewDidStartLoad:(UIWebView *)webView {
-    NSLog(@"webViewDidStartLoad");
-}
+//- (void)webViewDidStartLoad:(UIWebView *)webView {
+//    NSLog(@"webViewDidStartLoad");
+//}
 
-- (void)webViewDidFinishLoad:(UIWebView *)webView {
-    NSLog(@"webViewDidFinishLoad");
-}
-
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
-    //    NSLog(@"error -- %@\n\n%@\n%@",error,webView.request.URL.absoluteString,[webView stringByEvaluatingJavaScriptFromString:@"document.title"]);
-    NSLog(@"didFailLoadWithError");
-}
+//- (void)webViewDidFinishLoad:(UIWebView *)webView {
+//    NSLog(@"webViewDidFinishLoad");
+//}
+//
+//- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+//    //    NSLog(@"error -- %@\n\n%@\n%@",error,webView.request.URL.absoluteString,[webView stringByEvaluatingJavaScriptFromString:@"document.title"]);
+//    NSLog(@"didFailLoadWithError");
+//}
 
 @end
