@@ -30,11 +30,11 @@
     _webView.delegate = self;
     [self.view addSubview: _webView];
     
-    _otherWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, size.height /2 + 5, size.width, (size.height - 80))];
-    _otherWebView.layer.borderWidth = 1;
-    _otherWebView.layer.borderColor = [UIColor blackColor].CGColor;
-    _otherWebView.delegate = self;
-    [self.view addSubview: _otherWebView];
+//    _otherWebView = [[UIWebView alloc] initWithFrame:CGRectMake(0, size.height /2 + 5, size.width, (size.height - 80))];
+//    _otherWebView.layer.borderWidth = 1;
+//    _otherWebView.layer.borderColor = [UIColor blackColor].CGColor;
+//    _otherWebView.delegate = self;
+//    [self.view addSubview: _otherWebView];
     
     UIButton *btn = [UIButton buttonWithType:UIButtonTypeCustom];
     btn.frame = CGRectMake(100, 50, 100, 50);
@@ -65,10 +65,10 @@
 }
 
 - (void)loadOtherWebView{
-    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]];
-    [_otherWebView loadRequest:request];
-//    XCViewController *xcVc = [[XCViewController alloc] init];
-//    [self presentViewController:xcVc animated:YES completion:nil];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.baidu.com"]];
+//    [_otherWebView loadRequest:request];
+    XCViewController *xcVc = [[XCViewController alloc] init];
+    [self presentViewController:xcVc animated:YES completion:nil];
 }
 
 #pragma mark - webView delegate
